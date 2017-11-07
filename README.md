@@ -1,8 +1,9 @@
 # iterate-tree
 [![npm](https://img.shields.io/badge/npm-v1.0.2-green.svg)](https://www.npmjs.com/package/iterate-tree)
 
-Iterate tree object by given propety name. 
-Method implement Depth-first search(DFS) algorithm for traversing or searching.
+Iterate tree object by given propety name.
+
+Method implements Depth-first search(DFS) algorithm for traversing or searching.
 
 
 ### Install

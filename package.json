@@ -13,11 +13,11 @@
     "depth-first search",
     "search"
   ],
-  "homepage": "https://github.com/AngelAngelov/object-deep-copy",
+  "homepage": "https://github.com/AngelAngelov/iterate-tree",
   "author": "Angel Angelov <angel.s.angelov@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AngelAngelov/object-deep-copy"
+    "url": "https://github.com/AngelAngelov/iterate-tree"
   },
   "license": "MIT",
   "devDependencies": {
