@@ -1,0 +1,26 @@
+{
+  "name": "iterate-tree",
+  "version": "1.0.1",
+  "description": "iterate tree structure",
+  "main": "lib/iterate-tree.js",
+  "scripts": {
+    "test": "mocha test/",
+    "test-debug": "mocha --debug-brk --inspect test/"
+  },
+  "keywords": [
+    "iterate",
+    "tree",
+    "depth-first search",
+    "search"
+  ],
+  "homepage": "https://github.com/AngelAngelov/object-deep-copy",
+  "author": "Angel Angelov <angel.s.angelov@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AngelAngelov/object-deep-copy"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^3.5.3"
+  }
+}
