@@ -1,7 +1,7 @@
 {
   "name": "iterate-tree",
-  "version": "1.0.1",
-  "description": "iterate tree structure",
+  "version": "2.0.1",
+  "description": "iterate tree structure using Depth-first search(DFS) and Breadth-first search(BFS) algorithms for traversing or searching",
   "main": "lib/iterate-tree.js",
   "scripts": {
     "test": "mocha test/",
@@ -11,6 +11,7 @@
     "iterate",
     "tree",
     "depth-first search",
+    "breadth-first search",
     "search"
   ],
   "homepage": "https://github.com/AngelAngelov/iterate-tree",

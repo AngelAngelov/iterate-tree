@@ -7,7 +7,17 @@ describe('same count', function () {
         const realPeopleCount = 9;
         var countedPeople = 0;
 
-        iterator.iterateTree(tree, 'descendants', (person) => {
+        iterator.dfs(tree, 'descendants', (person) => {
+            if (person) {
+                countedPeople++;
+            }
+        })
+
+        assert.equal(countedPeople, realPeopleCount);
+
+        countedPeople = 0;
+
+        iterator.bfs(tree, 'descendants', (person) => {
             if (person) {
                 countedPeople++;
             }
@@ -22,7 +32,16 @@ describe('oldest person', function () {
         const oldestPersonAge = 83;
         var foundAge = 0;
 
-        iterator.iterateTree(tree, 'descendants', (person) => {
+        iterator.dfs(tree, 'descendants', (person) => {
+            if (person.age > foundAge) {
+                foundAge = person.age;
+            }
+        })
+
+        assert.equal(oldestPersonAge, foundAge);
+        
+        foundAge = 0;
+        iterator.dfs(tree, 'descendants', (person) => {
             if (person.age > foundAge) {
                 foundAge = person.age;
             }
@@ -37,7 +56,16 @@ describe('youngest person', function () {
         const youngestPersonAge = 2;
         var foundAge = 1000;
 
-        iterator.iterateTree(tree, 'descendants', (person) => {
+        iterator.dfs(tree, 'descendants', (person) => {
+            if (person.age < foundAge) {
+                foundAge = person.age;
+            }
+        })
+
+        assert.equal(youngestPersonAge, foundAge);
+
+        foundAge = 1000;
+        iterator.dfs(tree, 'descendants', (person) => {
             if (person.age < foundAge) {
                 foundAge = person.age;
             }
@@ -47,14 +75,14 @@ describe('youngest person', function () {
     })
 })
 
-describe('find person', function () {
+describe('find person dfs', function () {
     it('number', function () {
         const searchedPerson = 'Tom',
-              maxIterations = 6;
+              maxIterationsDfs = 6;
         var foundPerson,
             numberOfIterations = 0;
 
-        iterator.iterateTree(tree, 'descendants', (person) => {
+        iterator.dfs(tree, 'descendants', (person) => {
             numberOfIterations++; 
 
             if (person.name == searchedPerson) {
@@ -64,6 +92,28 @@ describe('find person', function () {
         })
 
         assert.equal(searchedPerson, foundPerson.name);
-        assert.equal(numberOfIterations, maxIterations);
+        assert.equal(numberOfIterations, maxIterationsDfs);
+    })
+})
+
+describe('find person bfs', function () {
+    it('number', function () {
+        const searchedPerson = 'Tom',
+              maxIterationsBfs = 3;
+        var foundPerson,
+            numberOfIterations = 0;
+
+
+        iterator.bfs(tree, 'descendants', (person) => {
+            numberOfIterations++; 
+
+            if (person.name == searchedPerson) {
+                foundPerson = person;
+                return false;
+            }
+        })
+
+        assert.equal(searchedPerson, foundPerson.name);
+        assert.equal(numberOfIterations, maxIterationsBfs);
     })
 })
